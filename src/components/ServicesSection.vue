@@ -1,5 +1,5 @@
 <template>
-  <section class="mt-20 w-full" id="services">
+  <section class="mt-20" >
     <div class="absolute right-0 top-[110rem] h-full w-full justify-end">
       <span class="flex opacity-20">
         <span class="w-16 h-32 rounded-l-full flex bg-primary blur-2xl"></span>
@@ -9,7 +9,7 @@
       </span>
     </div>
     <div class="px-4 xl:pl-16">
-      <h2 class="text-4xl font-bold mb-4">My Services</h2>
+      <h2 class="text-4xl font-bold mb-4" id="services">My Services</h2>
       <p class="max-w-2xl mx-auto sm:mx-0">
         I specialize in delivering bespoke services that emphasize
         functionality, scalability, and efficiency.
@@ -22,7 +22,7 @@
         v-for="service in services"
         :key="service.id"
         data-aos="fade-up"
-        class="flex flex-col items-center justify-between px-8 py-12 rounded-xl rounded-xl border border-gray-200 dark:border-gray-700 shadow-md hover:shadow-lg transition h-full"
+        class="flex flex-col items-center justify-between px-8 py-4 rounded-xl rounded-xl border border-gray-200 dark:border-gray-700 shadow-md hover:shadow-lg transition h-full"
       >
         <div
           class="relative flex-shrink-0 mx-auto h-24 w-24 text-center xl:h-28 xl:w-28 flex items-center justify-center"
@@ -31,13 +31,13 @@
             <img
               :src="service.icon"
               alt="service icon"
-              class="h-full w-full object-contain z-10 p-1"
+              class="h-full w-full object-contain z-10"
             />
           </div>
         </div>
         <div class="text-center">
           <h3
-            class="pt-8 text-lg font-semibold uppercase text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-500 lg:text-xl"
+            class="pt-4 text-lg font-semibold uppercase text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-500 lg:text-xl"
           >
             {{ service.name }}
           </h3>

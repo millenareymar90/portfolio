@@ -3,7 +3,7 @@
     <div class="mt-4 md:mt-0 flex flex-col z-10 w-full">
       <div
         class="container mx-auto px-6 md:px-12 lg:px-16 py-12"
-        data-aos="fade-left"
+        data-aos="slide-up"
       >
         <h2 class="text-4xl font-bold text-left mb-8">My Badges</h2>
         <div
@@ -34,7 +34,7 @@
 
     <div
       class="container mx-auto px-4 sm:px-6 lg:px-16 py-8 md:py-12"
-      data-aos="fade-right"
+      ddata-aos="slide-right"
     >
       <h2
         class="text-2xl sm:text-3xl md:text-4xl font-bold text-left mb-6 sm:mb-8"
@@ -82,6 +82,9 @@
         </div>
       </div>
     </div>
+    <div
+      class="bg-gradient-to-tr opacity-25 from-[#570cac] to-primary blur-2xl h-20 w-80 z-0 absolute -top-1/4 -left-4 transform -translate-x-2/3 -translate-1/2"
+    ></div>
   </section>
 </template>
 

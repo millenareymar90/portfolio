@@ -1,26 +1,11 @@
 <template>
-  <section class="mt-18 py-16 dark:text-white relative w-full" id="about">
-    <!-- Decorative Background -->
-    <div class="absolute inset-x-0 top-[93rem] h-64 flex items-start z-0">
-      <div
-        class="h-32 w-72 bg-gradient-to-br from-primary via-secondary to-[#570cac] blur-3xl opacity-30"
-      ></div>
-    </div>
-
-    <!-- Image as Background -->
-    <div
-      class="absolute z-0 top-1/3 -translate-y-1/3 w-full right-0 h-[calc(30%+20px)] bg-gradient-to-tr opacity-25 from-[#570cac] to-primary blur-2xl"
-    ></div>
-
-    <!-- About Me Section -->
-    <div
-      class="relative z-10 container mx-auto px-6 md:px-12 lg:px-16 py-12 w-full"
-      data-aos="fade-left"
-    >
-      <h2 class="text-4xl font-bold md:text-center mb-8">About Me</h2>
-      <div class="lg:flex lg:items-center lg:justify-between">
-        <div class="lg:w-1/2 text-center lg:text-left">
-          <p class="text-lg leading-relaxed text-justify mb-8">
+  <section>
+    <div class="hero min-h-screen">
+      <div class="hero-content flex-col lg:flex-row-reverse" data-aos="fade-left" id="about">
+        <img src="@/assets/about.png" class="max-w-sm rounded-lg shadow-2xl" />
+        <div class="px-4">
+          <h2 class="text-4xl font-bold md:text-center mb-8">About Me</h2>
+          <p class="text-lg leading-relaxed text-justify my-8">
             I’m passionate about creating high-quality, innovative solutions
             that help realize your ideas. With an emphasis on functionality,
             scalability, and efficiency, I am dedicated to delivering customized
@@ -41,24 +26,11 @@
             something extraordinary that truly adds value.
           </p>
         </div>
-        <div
-          class="relative max-w-lg lg:max-w-xl h-96 lg:h-auto shadow-sm flex items-center justify-center hidden lg:block"
-        >
-          <div class="relative z-10 p-2">
-            <img
-              src="@/assets/about.png"
-              alt="Reymar Millena"
-              loading="lazy"
-              class="w-full h-full max-w-xs sm:max-w-sm lg:max-w-md"
-            />
-          </div>
-        </div>
       </div>
     </div>
-
     <!-- Education Section -->
     <div
-      class="relative z-10 container mx-auto px-6 md:px-12 lg:px-16 py-12"
+      class="relative z-10 container mx-auto px-6 md:px-12 lg:px-16 py-4"
       data-aos="fade-right"
     >
       <h2 class="text-4xl font-bold text-left mb-8">My Education</h2>
@@ -74,7 +46,7 @@
             <img
               :src="element.icon"
               alt="service icon"
-              class="h-20 w-20 object-contain"
+              class="h-20 w-20 object-contain bg-gray-100 dark:bg-gray-800 rounded-md"
             />
           </div>
           <div class="ml-6">
