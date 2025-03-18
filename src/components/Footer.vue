@@ -102,7 +102,59 @@
     </div>
   </footer>
 </template>
-
+<script setup>
+  import { ref, onMounted } from "vue";
+  import axios from "axios";
+ 
+  // Get current year
+  const currentYear = new Date().getFullYear();
+  const visitCount = ref(0);
+ 
+  // Load environment variables
+  const binId = import.meta.env.VITE_JSONBIN_ID; // Correct way to access Vite .env variables
+  const apiKey = "$2a$10$pt05fWWX5RD7Kd6RpGuike/2VG1D7qXpGHRnsgLgQ5VocKyqf38uK";
+ 
+  const fetchVisitorCount = async () => {
+    try {
+      const response = await axios.get(`https://api.jsonbin.io/v3/b/${binId}/latest`, {
+        headers: {
+          "X-Master-Key": apiKey,
+          "Content-Type": "application/json",
+        },
+      });
+ 
+      visitCount.value = response.data.record?.visitCount || 0;
+    } catch (error) {
+      console.error("Error fetching visit count:", error);
+      visitCount.value = 0; // Set default value to avoid UI breakage
+    }
+  };
+ 
+  const updateVisitorCount = async () => {
+    try {
+      visitCount.value += 1;
+ 
+      await axios.put(
+        `https://api.jsonbin.io/v3/b/${binId}`,
+        { visitCount: visitCount.value },
+        {
+          headers: {
+            "X-Master-Key": apiKey,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+    } catch (error) {
+      console.error("Error updating visit count:", error);
+    }
+  };
+ 
+  // Fetch and update visit count on component mount
+  onMounted(async () => {
+    await fetchVisitorCount();
+    await updateVisitorCount();
+  });
+</script>
 <style scoped>
 /* Add any additional styles if needed */
 footer a i {

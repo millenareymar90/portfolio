@@ -34,7 +34,7 @@
 
     <div
       class="container mx-auto px-4 sm:px-6 lg:px-16 py-8 md:py-12"
-      ddata-aos="slide-right"
+      data-aos="slide-up"
     >
       <h2
         class="text-2xl sm:text-3xl md:text-4xl font-bold text-left mb-6 sm:mb-8"

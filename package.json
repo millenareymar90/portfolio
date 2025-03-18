@@ -12,6 +12,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.7.2",
     "aos": "^2.3.4",
+    "axios": "^1.8.3",
     "daisyui": "^4.12.23",
     "emailjs-com": "^3.2.0",
     "vue": "^3.4.37",
